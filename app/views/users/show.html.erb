@@ -1,0 +1,11 @@
+<% provide :title, @user.name + "さんのShare-単ページ"%>
+
+<% content_for :head do %>
+  <title><%= @user.name %>-monolist </title>
+  <meta name="description" content="<%= @user.name %>さんのShare-単ページ。<%= @user.name %>さんの単語帳、持ってる単語帳を表示しています。あなたも共有してみませ
+んか？">
+<% end %>
+
+<%= render 'profile' , user: @user %>
+
+

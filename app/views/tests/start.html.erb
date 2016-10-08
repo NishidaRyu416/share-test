@@ -1,0 +1,10 @@
+<h1>Tests#start</h1>
+
+
+<%#= link_to "ランダムテストスタート", tests_question_path(@user) %>
+
+<%= form_tag(action: :ready) do %>
+  <%= select_tag 'option', options_for_select(["japanese", "english"]) %>
+  <%= submit_tag "テストスタート", class: "btn btn-large btn-primary" %>
+<% end %>
+

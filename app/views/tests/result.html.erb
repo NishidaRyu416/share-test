@@ -1,0 +1,11 @@
+<h1>Tests#result</h1>
+
+
+
+<ul>
+  <% @result_ary.each_slice(2) do |question_number, result| %>
+    <li><%= question_number %>：　<%= result %></li>
+  <% end %>
+</ul>
+
+<p><%= link_to 'スタートに戻る', tests_start_path %></p>

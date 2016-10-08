@@ -1,0 +1,4 @@
+<h1><%=@word.title%></h1>
+<%= link_to "Edit", edit_word_path(@word), class:"btn btn-warning " %>
+<%= link_to "Delete", word_path(@word), method: :delete, class:"btn btn-danger" %>
+

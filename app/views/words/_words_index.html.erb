@@ -1,0 +1,23 @@
+<div class="col-md-12">
+  <table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+          <th>Title</th>
+          <th>Japanese</th>
+          <th>English</th>
+          <th>Posted</th>
+          <th>Creator</th>
+        <% if# !!current_user %>
+          <th>Favorite</th>
+        </tr>
+        <tbody>
+          <%#= render @words_mine %>
+          <%#= render @words_favorite %>
+        <%# else %>
+    </thead>
+      <%= render @words %>
+    </tbody>
+        <% end %>
+  </table>
+</div>
+

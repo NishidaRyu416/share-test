@@ -1,0 +1,21 @@
+<tr id="words-<%= word.id %>">
+  <td><%= link_to word.title, word, class: "btn btn-info"%></td>
+  <td><%= word.japanese %></td>
+  <td><%= word.english %></td>
+  <td><%= time_ago_in_words(word.created_at) %> ago.</td>
+  <td>
+      <%=  link_to word.user.name,users_path,class: "btn btn-warning" %>
+  </td>
+  
+  <td>
+    <% if word.favorite?(current_user) %>
+      <%= link_to "Release Favorites", word_favorite_path(word), method: :delete, class:"btn btn-danger" %>
+    <% else %>
+      <%= link_to "Add Favorites", word_favorite_path(word), method: :post, class:"btn btn-success" %>
+    <% end %>
+  </td>
+</tr>
+
+
+ 
+

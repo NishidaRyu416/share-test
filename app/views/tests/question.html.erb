@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h1>Q&A</h1>
+      </div>
+          <div class="panel-body">
+            <%= form_tag(action: :create) do %>
+              <%= hidden_field_tag "count", @words.count %>
+              <% @words.each.with_index(1)do |word, n| %>
+
+              <label for=<%= "#{n}"%>><%= "#{n}問目"%>：<%= eval("word.#{@question}")%> （正答: <%= eval("word.#{@answer}") %>)</label><br>
+              <%= text_field_tag "#{n}", '', class: 'form-control' %>
+
+              <%= hidden_field_tag "answer#{n}", eval("word.#{@answer}") %>
+              <% end %>
+              <%= submit_tag "Answer", class: "btn btn-large btn-primary" %>
+            <% end %>
+          </div>
+    </div>
+  </div>
+</div>
+
+
+
+      
+    　    
+        
+      

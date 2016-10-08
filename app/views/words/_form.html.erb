@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@word) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %> <!-- ここを追加 -->
+      
+      <%= f.label :title,"タイトル"%>
+      <%= f.text_field :title, class: 'form-control' %>
+      
+      <%= f.label :image,"ホーム画像" %>
+      <%= f.file_field :image%>
+      <br>
+
+      <%= f.label :japanese,"問題"%>
+      <%= f.text_field :japanese, class: 'form-control' %>
+
+      <%= f.label :english, "回答" %>
+      <%= f.text_field :english, class: 'form-control' %>
+
+      <%#= f.label :korean %>
+      <%#= f.text_field:korean, class: 'form-control' %>
+
+      <%#= f.label :chinese %>
+      <%#= f.text_field:chinese, class: 'form-control' %>
+
+      <%= f.submit action + ' my words', class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

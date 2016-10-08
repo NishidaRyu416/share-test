@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+    <div class="panel panel-default">
+
+      <div class="panel-heading">
+        <h1><%=title%></h1>
+      </div>
+
+      <div class="panel-body">
+        <%= form_for(@user) do |f| %>
+          <%= render 'shared/error_messages', object: f.object %> <!-- ここを追加 -->
+    
+          <%= f.label :name %>
+          <%= f.text_field :name, class: 'form-control'%>
+    
+          <%= f.label :email %>
+          <%= f.text_field :email, class: 'form-control' %>
+          
+          <%= render 'users/form/form_extend', f: f %>
+    
+          <%= f.label :password %>
+          <%= f.password_field :password, class: 'form-control' %>
+    
+          <%= f.label :password_confirmation, "Confirmation" %>
+          <%= f.password_field :password_confirmation, class: 'form-control' %>
+    
+          <%= f.submit submit + " your " + how, class: "btn btn-large btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

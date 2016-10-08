@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+    <div class="panel panel-default">
+
+      <div class="panel-heading">
+        <h1>Q&A</h1>
+      </div>
+
+      <div class="panel-body">
+        <%= form_for(@user) do |f| %>
+          <%= render 'shared/error_messages', object: f.object %> <!-- ここを追加 -->
+          <%= f.label :japanese %>
+          <%= f.text_area :japanese, class: 'form-control'%>
+          <%= f.label :english %>
+          <%= f.text_area :english, class: 'form-control' %>
+
+          <%= f.submit "Answer", class: "btn btn-large btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
